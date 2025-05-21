@@ -1,0 +1,71 @@
+@use "app/styles";
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+}
+
+.taskTitleSticky {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  min-width: 120px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-weight: 700;
+  border-right: 1px solid #e3e6ea;
+}
+
+.daysRow {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.dayCell {
+  min-width: 120px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7f8fa;
+  color: #222;
+  border-left: 1px solid #e3e6ea;
+}
+
+.dayCellTotal {
+  min-width: 120px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7f8fa;
+  color: #222;
+  font-weight: bold;
+  border-left: 1px solid #e3e6ea;
+}
+
+.totalSticky {
+  position: sticky;
+  right: 0;
+  z-index: 2;
+  background: #fff;
+  min-width: 60px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-left: 1px solid #e3e6ea;
+}
