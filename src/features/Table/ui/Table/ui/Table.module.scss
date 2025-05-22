@@ -1,0 +1,8 @@
+.table {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  border-bottom: none;
+  color: var(--color-text);
+}
