@@ -1,12 +1,14 @@
 :root {
   --color-text: #222;
-  --color-bg: #f7f8fa;
-  --color-surface: #fff;
-  --color-border: #e3e6ea;
-  --color-primary: #2196f3;
-  --color-primary-hover: #1976d2;
-  --color-secondary: #e0e0e0;
-  --color-secondary-hover: #bdbdbd;
-  --color-accent: #1976d2;
-  --color-hover: #f0f4fa;
+  --color-bg: #f7f8fa;              // общий фон страницы
+  --color-surface: #fff;            // фон ячеек/таблицы
+  --color-border: #e3e6ea;          // границы
+  --color-primary: #1976d2;         // синий
+  --color-primary-hover: #1565c0;   // синий hover
+  --color-accent: #64b5f6;          // голубой
+  --color-blue-hover: #e3f0ff;      // голубой hover
+  --color-secondary: #e0e0e0;       // вторичный фон/кнопки
+  --color-secondary-hover: #bdbdbd; // вторичный hover
+  --color-hover: #f0f4fa;           // приятный светлый hover для ячеек
+  --color-surface-alt: #f3f6fa;     // альтернативный фон для зебры/чередования строк
 }

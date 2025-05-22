@@ -1,12 +1,14 @@
 html.dark {
-  --color-text: #f7f8fa;
-  --color-bg: #181a1b;
-  --color-surface: #23272b;
-  --color-border: #2c2f34;
-  --color-primary: #2196f3;
-  --color-primary-hover: #42a5f5;
-  --color-secondary: #424242;
-  --color-secondary-hover: #616161;
-  --color-accent: #90caf9;
-  --color-hover: #23272b;
+  --color-text: #eaf4ff;            // светлый текст
+  --color-bg: #181c23;              // общий фон страницы
+  --color-surface: #232834;         // фон ячеек/таблицы
+  --color-border: #2c3440;          // границы
+  --color-primary: #1976d2;         // синий
+  --color-primary-hover: #1565c0;   // синий hover
+  --color-accent: #64b5f6;          // голубой
+  --color-blue-hover: #233554;      // голубой hover
+  --color-secondary: #313846;       // вторичный фон/кнопки
+  --color-secondary-hover: #3a4252; // вторичный hover
+  --color-hover: #232c3a;           // приятный тёмный hover для ячеек
+  --color-surface-alt: #20232b;     // альтернативный фон для зебры/чередования строк
 }

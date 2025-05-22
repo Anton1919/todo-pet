@@ -4,6 +4,7 @@
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
   border-bottom: none;
+  color: var(--color-text);
 
   &__row {
     display: flex;
@@ -54,16 +55,37 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: default;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-hover);
+      cursor: pointer;
+    }
+
+    &--active {
+      background-color: var(--color-blue-hover);
+    }
 
     &-num {
       font-size: var(--font-size-m);
       font-weight: bold;
+
+      &--active {
+        color: var(--color-primary);
+      }
     }
 
     &-title {
       font-size: var(--font-size-s);
       font-weight: 500;
+
+      &--active {
+        color: var(--color-accent);
+      }
     }
+
+
   }
 
   &__total-sticky {

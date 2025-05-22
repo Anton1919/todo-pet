@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Table } from '@/widgets/Table';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher/ThemeSwitcher.tsx';
 
 export function App() {
   const todayRef = useRef<HTMLDivElement | null>(null);
@@ -15,6 +16,7 @@ export function App() {
 
   return (
     <>
+      <ThemeSwitcher />
       <Table />
     </>
   );

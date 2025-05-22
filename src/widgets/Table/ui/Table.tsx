@@ -48,9 +48,27 @@ export function Table() {
     });
   };
 
+  const tableCellStyles = (isCurrentDate: boolean = false) => {
+    return clsx(s['table__day-cell'], {
+      [s['table__day-cell--active']]: isCurrentDate,
+    });
+  };
+
   const tableTotalStickyStyles = (isGreyBg: boolean = true) => {
     return clsx(s['table__total-sticky'], {
       [s['table__total-sticky--grey']]: isGreyBg,
+    });
+  };
+
+  const tableTCellNumStyles = (isCurrentDate: boolean = false) => {
+    return clsx(s['table__day-cell-num'], {
+      [s['table__day-cell-num--active']]: isCurrentDate,
+    });
+  };
+
+  const tableTCellTitleStyles = (isCurrentDate: boolean = false) => {
+    return clsx(s['table__day-cell-title'], {
+      [s['table__day-cell-title--active']]: isCurrentDate,
     });
   };
 
@@ -60,14 +78,17 @@ export function Table() {
         <h3 className={tableTitleStyles()}>Task</h3>
         <div className={tableDaysStyles()}>
           {days.map(({ dayNum, dayTitle }) => {
+            const isCurrent = dayNum === currentDate;
             return (
               <div
-                className={s['table__day-cell']}
+                className={tableCellStyles(isCurrent)}
                 key={dayNum}
-                ref={dayNum === currentDate ? totalRef : null}
+                ref={isCurrent ? totalRef : null}
               >
-                <span className={s['table__day-cell-num']}>{dayNum}</span>
-                <span className={s['table__day-cell-title']}>{dayTitle}</span>
+                <span className={tableTCellNumStyles(isCurrent)}>{dayNum}</span>
+                <span className={tableTCellTitleStyles(isCurrent)}>
+                  {dayTitle}
+                </span>
               </div>
             );
           })}
