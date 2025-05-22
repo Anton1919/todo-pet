@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { memo, useRef } from 'react';
-import { useTableScrollToCurrentDate } from '@/features/Table/model/lib/hooks/useTableScrollToCurrentDate.ts';
+import { useTableScrollToCurrentDate } from '@/features/Table/model/hooks/useTableScrollToCurrentDate.ts';
 import type { HeaderDays } from '@/shared/lib/utils/getMonthDays.ts';
 import s from './TableHeader.module.scss';
 

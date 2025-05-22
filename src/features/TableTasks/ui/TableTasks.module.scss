@@ -1,25 +1,15 @@
-.table__row {
-  display: flex;
-  align-items: center;
-  min-width: max-content;
-  border-bottom: 1px solid var(--color-border);
+@use '../../../app/styles' as m;
 
-  &:last-child {
-    border-bottom: none;
-  }
+.table__row {
+  @include m.table-row-base;
 }
 
 .table__title {
-  position: sticky;
+  @include m.sticky-column-base;
   left: 0;
-  background-color: var(--color-surface);
   border-right: 1px solid var(--color-border);
   min-width: var(--table-cell-width);
-  height: var(--table-cell-height);
-  display: flex;
-  align-items: center;
   justify-content: start;
-  font-size: var(--font-size-m);
   padding-left: 5px;
 
   &--bold {
@@ -79,17 +69,11 @@
 }
 
 .table__total-sticky {
-  position: sticky;
+  @include m.sticky-column-base;
   right: 0;
-  min-width: var(--table-total-width);
-  height: var(--table-cell-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-m);
-  font-weight: bold;
   border-left: 1px solid var(--color-border);
-  background-color: var(--color-surface);
+  min-width: var(--table-total-width);
+  justify-content: center;
 
   &--grey {
     background-color: var(--color-bg);

@@ -1,0 +1,19 @@
+@mixin table-row-base {
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  border-bottom: 1px solid var(--color-border);
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+@mixin sticky-column-base {
+  position: sticky;
+  height: var(--table-cell-height);
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-m);
+  font-weight: bold;
+  background-color: var(--color-surface);
+}
