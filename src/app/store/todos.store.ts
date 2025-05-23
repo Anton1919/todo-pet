@@ -1,12 +1,12 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { waitFn } from '@/shared/utils';
-import { timeLogEntriesFetchRoute } from '@/app/lib/consts/endpoints.ts';
 import type { TodosByCategoryType, TodosType } from '@/app/lib/types/types.ts';
 import {
   calculateTotalMonthlyHoursByCategories,
   groupTodosByCategories,
 } from '@/app/lib/utils/todosCalculations.ts';
 import { initialTodosByCategories } from '@/app/lib/consts/initStateStore.ts';
+import { timeLogEntriesFetchRoute } from '@/app/lib/consts/endpoints.ts';
 
 export const fetchTodosFx = createEffect<void, TodosType[], Error>(async () => {
   await waitFn(2000, 3000);
