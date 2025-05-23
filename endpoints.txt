@@ -1,0 +1,66 @@
+Базовый URL: http://localhost:5001
+Ресурс: timeLogEntries (Записи о времени)
+
+GET /timeLogEntries
+Получить все записи о времени.
+
+GET /timeLogEntries/{id}
+Получить конкретную запись о времени по ее id.
+
+POST /timeLogEntries
+Создать новую запись о времени.
+Тело запроса (JSON): {
+    "categoryName": "...",
+    "title": "...",
+    "description": "...",
+    "hours": "...",
+    "date": "..."
+}
+
+PUT /timeLogEntries/{id}
+Полностью обновить существующую запись о времени по ее id.
+Пример: /timeLogEntries/1
+Тело запроса (JSON): {
+    "id": 1,
+    "categoryName": "...",
+    "title": "...",
+    "description": "...",
+    "hours": ...,
+    "date": "..."
+}
+
+DELETE /timeLogEntries/{id}
+Удалить запись о времени по ее id.
+
+
+Ресурс: tasks (Задачи со страницы "Tasks")
+GET /tasks
+Получить все задачи.
+
+GET /tasks/{id}
+Получить конкретную задачу по ее id.
+
+
+POST /tasks
+Создать новую задачу.
+Тело запроса (JSON): {
+    "name": "...",
+    "isCompleted": false,
+    "isActive": false,
+    "startedAtTimestamp": null,
+    "totalTrackedTimeSeconds": 0
+}
+PUT /tasks/{id}
+Полностью обновить существующую задачу по ее id.
+Тело запроса (JSON): {
+    "id": 1,
+    "name": "...",
+    "isCompleted": ...,
+    "isActive": ...,
+    "startedAtTimestamp": "...",
+    "totalTrackedTimeSeconds": "..."
+}
+
+DELETE /tasks/{id}
+Удалить задачу по ее id.
+
