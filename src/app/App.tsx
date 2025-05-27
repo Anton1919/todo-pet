@@ -9,7 +9,7 @@ import {
   $dayHoursInMonth,
   $groupTodosByMonth,
   $todos,
-  $totalDaysHoursInMonth,
+  $totalHoursInMonth,
   $totalMonthlyHoursByCategories,
   fetchTimeLogs,
 } from '@/app/store/todos.store.ts';
@@ -23,7 +23,7 @@ export const App = function App() {
   const totalMonthlyHoursByCategories = useUnit($totalMonthlyHoursByCategories);
   const groupTodosByMonth = useUnit($groupTodosByMonth);
   const dayHours = useUnit($dayHoursInMonth);
-  const totalDaysHoursInMonth = useUnit($totalDaysHoursInMonth);
+  const totalHoursInMonth = useUnit($totalHoursInMonth);
 
   useEffect(() => {
     fetchTimeLogs();
@@ -40,9 +40,16 @@ export const App = function App() {
           <TableTasks
             monthDays={monthDays}
             groupTodosByMonth={dailyTasksCell}
+            monthlyCategoryHours={totalMonthlyHoursByCategories['May']}
           />
         }
-        footerSlot={<TableFooter monthDays={monthDays} />}
+        footerSlot={
+          <TableFooter
+            monthDays={monthDays}
+            dayHours={dayHours['May']}
+            totalHoursInMonth={totalHoursInMonth['May']}
+          />
+        }
       />
     </>
   );

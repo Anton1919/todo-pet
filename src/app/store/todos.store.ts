@@ -10,7 +10,7 @@ import { totalMonthHours } from '@/app/lib/utils/todosCalculations/totalMonthHou
 import { getDailyTasksCell } from '@/app/lib/utils/todosCalculations/getDailyTasksCell/getDailyTasksCell.ts';
 
 export const fetchTodosFx = createEffect<void, TodosType[], Error>(async () => {
-  await waitFn(2000, 3000);
+  await waitFn(500, 1000);
   const response = await fetch(timeLogEntriesFetchRoute);
 
   if (!response.ok) {
@@ -43,11 +43,9 @@ export const $dayHoursInMonth = $groupTodosByMonth.map((groupedEntries) => {
   return calcDayHoursInMonth(groupedEntries);
 });
 
-export const $totalDaysHoursInMonth = $dayHoursInMonth.map(
-  (dayHoursInMonth) => {
-    return totalMonthHours(dayHoursInMonth);
-  },
-);
+export const $totalHoursInMonth = $dayHoursInMonth.map((dayHoursInMonth) => {
+  return totalMonthHours(dayHoursInMonth);
+});
 
 export const $isLoading = fetchTodosFx.pending;
 

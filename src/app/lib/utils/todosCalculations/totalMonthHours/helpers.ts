@@ -3,15 +3,13 @@ import type {
   TotalHoursType,
 } from '@/app/lib/types/types.ts';
 
-export const totalDaysHoursInMonth = (
-  daysAndHours: DayHoursInMonthType,
-): { totalHours: number } => {
+export const totalDaysHoursInMonth = (daysAndHours: DayHoursInMonthType) => {
   return Object.values(daysAndHours).reduce((acc, { totalHours }) => {
-    if (!acc['totalDayHours']) {
-      acc['totalDayHours'] = 0;
+    if (!acc['totalHours']) {
+      acc['totalHours'] = 0;
     }
 
-    acc['totalDayHours'] += totalHours;
+    acc['totalHours'] += totalHours;
 
     return acc;
   }, {} as TotalHoursType);
