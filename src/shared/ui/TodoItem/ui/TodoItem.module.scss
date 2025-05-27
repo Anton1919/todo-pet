@@ -1,0 +1,30 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: var(--todo-item-height);
+  font-size: var(--font-size-m);
+  line-height: normal;
+  background-color: var(--color-secondary);
+  border-radius: 4px;
+  padding: 4px;
+
+  .title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    height: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+    white-space: wrap;
+    margin-right: 4px;
+  }
+
+  .hours {
+    font-weight: bold;
+  }
+}

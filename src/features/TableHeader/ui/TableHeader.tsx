@@ -15,7 +15,7 @@ export const TableHeader = memo(function TableHeader({
 }: PropsType) {
   const todayRef = useRef<HTMLDivElement | null>(null);
 
-  useTableScrollToCurrentDate(todayRef, true);
+  useTableScrollToCurrentDate(todayRef);
 
   const tableCellStyles = (isCurrentDate: boolean = false) => {
     return clsx(s['table__day-cell'], {

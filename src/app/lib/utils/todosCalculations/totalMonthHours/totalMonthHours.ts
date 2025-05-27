@@ -1,9 +1,9 @@
 import type { DayHoursInMonthType } from '@/app/lib/types/types.ts';
 import { totalDaysHoursInMonth } from './helpers';
 
-export const totalMonthHours = (
-  dayHoursInMonth: Record<string, DayHoursInMonthType>,
-) => {
+type TotalMonthHoursType = Record<string, DayHoursInMonthType>;
+
+export const totalMonthHours = (dayHoursInMonth: TotalMonthHoursType) => {
   return Object.entries(dayHoursInMonth).reduce((accMonth, value) => {
     const [monthName, daysAndHours] = value;
 

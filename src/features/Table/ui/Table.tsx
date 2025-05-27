@@ -1,5 +1,5 @@
-import s from './Table.module.scss';
 import { memo, type ReactNode } from 'react';
+import s from './Table.module.scss';
 
 type PropsType = {
   headerSlot?: ReactNode;

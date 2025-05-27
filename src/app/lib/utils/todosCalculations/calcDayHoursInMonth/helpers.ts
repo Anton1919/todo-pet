@@ -28,7 +28,7 @@ export const totalDayInMonth = (
       .reduce((sum, todo) => sum + todo.hours, 0);
 
     accDays[String(dayNumber)] = {
-      totalDayHours: totalHoursForDay,
+      totalHours: totalHoursForDay,
     };
 
     return accDays;

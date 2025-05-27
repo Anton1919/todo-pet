@@ -1,0 +1,25 @@
+.day-cell {
+  border-right: 1px solid var(--color-border);
+  width: var(--table-cell-width);
+  height: var(--table-cell-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 2px;
+  justify-content: center;
+  cursor: default;
+  transition: background-color 0.2s ease-in-out;
+  overflow-y: hidden;
+
+  &.moreThanTwoTask {
+    justify-content: flex-start;
+  }
+
+  &:hover {
+    background-color: var(--color-hover);
+    cursor: pointer;
+    overflow-y: auto;
+  }
+
+}

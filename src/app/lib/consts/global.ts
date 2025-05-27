@@ -14,3 +14,5 @@ export const MONTH_ARRAY = [
   'November',
   'December',
 ] as const;
+
+export type MonthNameType = (typeof MONTH_ARRAY)[number];

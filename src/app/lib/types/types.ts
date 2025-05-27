@@ -1,4 +1,4 @@
-import type { MONTH_ARRAY } from '@/app/lib/consts/global.ts';
+import type { MonthNameType } from '@/app/lib/consts/global.ts';
 
 export type CategoryType = 'Development' | 'Testing' | 'Planning';
 
@@ -11,13 +11,16 @@ export type TodosType = {
   date: string;
 };
 
-export type MonthNameType = (typeof MONTH_ARRAY)[number];
-
-export type TodosByMonthType = {
-  [K in MonthNameType]: TodosByCategoryType;
-};
-
 export type TodosByCategoryType = Record<CategoryType, TodosType[]>;
+
+export type TodosByMonthType = Record<MonthNameType, TodosByCategoryType>;
+
+export type TodosByCategoryDayType = Record<
+  CategoryType,
+  Record<number, TodosType[]>
+>;
+
+export type DailyTasksCellType = Record<MonthNameType, TodosByCategoryDayType>;
 
 export type TotalHoursByCategoriesType = Record<CategoryType, number>;
 
@@ -26,6 +29,6 @@ export type TotalMonthlyHoursType = Record<
   TotalHoursByCategoriesType
 >;
 
-export type TotalDayHoursType = { totalDayHours: number };
+export type TotalHoursType = { totalHours: number };
 
-export type DayHoursInMonthType = Record<string, TotalDayHoursType>;
+export type DayHoursInMonthType = Record<string, TotalHoursType>;

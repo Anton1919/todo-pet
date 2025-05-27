@@ -1,25 +1,19 @@
 import clsx from 'clsx';
 import { memo } from 'react';
 import type { HeaderDays } from '@/shared/lib/utils/getMonthDays.ts';
+import type { DailyTasksCellType } from '@/app/lib/types/types.ts';
+import { DailyTasksCell } from '@/shared/ui/DailyTasksCell';
+import { tasks } from '@/features/TableTasks/model/consts/table-tasks.ts';
 import s from './TableTasks.module.scss';
-
-export type TaskType = {
-  id: string;
-  title: string;
-};
-
-const tasks: TaskType[] = [
-  { id: '1', title: 'Development' },
-  { id: '2', title: 'Testing' },
-  { id: '3', title: 'Planning' },
-];
 
 type PropsType = {
   monthDays: HeaderDays[];
+  groupTodosByMonth: DailyTasksCellType;
 };
 
 export const TableTasks = memo(function TableTasks({
   monthDays = [],
+  groupTodosByMonth,
 }: PropsType) {
   const tableTitleStyles = (isBold: boolean = true) => {
     return clsx(s['table__title'], {
@@ -46,10 +40,13 @@ export const TableTasks = memo(function TableTasks({
           <div className={tableTitleStyles(false)}>{task.title}</div>
           <div className={tableDaysStyles(false)}>
             {monthDays.map(({ dayNum }) => {
+              const selectedMonth = 'May';
+              const category = task.title;
               return (
-                <div className={s['table__day-cell']} key={dayNum}>
-                  <span>-</span>
-                </div>
+                <DailyTasksCell
+                  key={dayNum}
+                  todosList={groupTodosByMonth[selectedMonth][category][dayNum]}
+                />
               );
             })}
           </div>

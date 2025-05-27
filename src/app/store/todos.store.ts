@@ -7,6 +7,7 @@ import { monthlyCategoryHours } from '@/app/lib/utils/todosCalculations/monthlyC
 import { groupTodosByMonth } from '@/app/lib/utils/todosCalculations/groupTodosByMonth/groupTodosByMonth.ts';
 import { calcDayHoursInMonth } from '@/app/lib/utils/todosCalculations/calcDayHoursInMonth/calcDayHoursInMonth.ts';
 import { totalMonthHours } from '@/app/lib/utils/todosCalculations/totalMonthHours/totalMonthHours.ts';
+import { getDailyTasksCell } from '@/app/lib/utils/todosCalculations/getDailyTasksCell/getDailyTasksCell.ts';
 
 export const fetchTodosFx = createEffect<void, TodosType[], Error>(async () => {
   await waitFn(2000, 3000);
@@ -29,6 +30,10 @@ export const $groupTodosByMonth = createStore<TodosByMonthType>(
 ).on(fetchTodosFx.doneData, (_, todosByCategory) =>
   groupTodosByMonth(todosByCategory),
 );
+
+export const $dailyTasksCell = $groupTodosByMonth.map((groupTodosByMonth) => {
+  return getDailyTasksCell(groupTodosByMonth);
+});
 
 export const $totalMonthlyHoursByCategories = $groupTodosByMonth.map(
   (groupedEntries) => monthlyCategoryHours(groupedEntries),
