@@ -1,17 +1,10 @@
-import type {
-  TotalMonthlyHoursByCategoriesType,
-  TodosByCategoryType,
-} from '@/app/lib/types/types.ts';
+import { MONTH_ARRAY } from '@/app/lib/consts/global.ts';
+import type { TodosByMonthType } from '@/app/lib/types/types.ts';
 
-export const initialTodosByCategories: TodosByCategoryType = {
-  Development: [],
-  Testing: [],
-  Planning: [],
-};
-
-export const initialTotalMonthlyHoursByCategories: TotalMonthlyHoursByCategoriesType =
-  {
-    Development: 0,
-    Testing: 0,
-    Planning: 0,
-  };
+export const initialTodosByMonth: TodosByMonthType = MONTH_ARRAY.reduce(
+  (acc, month) => {
+    acc[month] = { Development: [], Testing: [], Planning: [] };
+    return acc;
+  },
+  {} as TodosByMonthType,
+);

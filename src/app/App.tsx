@@ -6,8 +6,10 @@ import { TableHeader } from '@/features/TableHeader';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { useEffect } from 'react';
 import {
-  $groupTodosByCategories,
+  $dayHoursInMonth,
+  $groupTodosByMonth,
   $todos,
+  $totalDaysHoursInMonth,
   $totalMonthlyHoursByCategories,
   fetchTimeLogs,
 } from '@/app/store/todos.store.ts';
@@ -16,16 +18,14 @@ import { useUnit } from 'effector-react';
 export const App = function App() {
   const { currentDate, monthDays } = useDateInfo();
   const todos = useUnit($todos);
-  const groupTodosByCategories = useUnit($groupTodosByCategories);
   const totalMonthlyHoursByCategories = useUnit($totalMonthlyHoursByCategories);
+  const groupTodosByMonth = useUnit($groupTodosByMonth);
+  const dayHours = useUnit($dayHoursInMonth);
+  const totalDaysHoursInMonth = useUnit($totalDaysHoursInMonth);
 
   useEffect(() => {
     fetchTimeLogs();
   }, []);
-
-  console.log(todos);
-  console.log(groupTodosByCategories);
-  console.log(totalMonthlyHoursByCategories);
 
   return (
     <>

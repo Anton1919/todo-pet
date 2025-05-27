@@ -45,11 +45,13 @@ export const TableTasks = memo(function TableTasks({
         <div className={s['table__row']} key={task.id}>
           <div className={tableTitleStyles(false)}>{task.title}</div>
           <div className={tableDaysStyles(false)}>
-            {monthDays.map(({ dayNum }) => (
-              <div className={s['table__day-cell']} key={dayNum}>
-                <span>-</span>
-              </div>
-            ))}
+            {monthDays.map(({ dayNum }) => {
+              return (
+                <div className={s['table__day-cell']} key={dayNum}>
+                  <span>-</span>
+                </div>
+              );
+            })}
           </div>
           <h3 className={tableTotalStickyStyles()}>0</h3>
         </div>

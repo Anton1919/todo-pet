@@ -1,12 +1,12 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { waitFn } from '@/shared/utils';
-import type { TodosByCategoryType, TodosType } from '@/app/lib/types/types.ts';
-import {
-  calculateTotalMonthlyHoursByCategories,
-  groupTodosByCategories,
-} from '@/app/lib/utils/todosCalculations.ts';
-import { initialTodosByCategories } from '@/app/lib/consts/initStateStore.ts';
+import type { TodosByMonthType, TodosType } from '@/app/lib/types/types.ts';
 import { timeLogEntriesFetchRoute } from '@/app/lib/consts/endpoints.ts';
+import { initialTodosByMonth } from '@/app/lib/consts/initStateStore.ts';
+import { monthlyCategoryHours } from '@/app/lib/utils/todosCalculations/monthlyCategoryHours/monthlyCategoryHours.ts';
+import { groupTodosByMonth } from '@/app/lib/utils/todosCalculations/groupTodosByMonth/groupTodosByMonth.ts';
+import { calcDayHoursInMonth } from '@/app/lib/utils/todosCalculations/calcDayHoursInMonth/calcDayHoursInMonth.ts';
+import { totalMonthHours } from '@/app/lib/utils/todosCalculations/totalMonthHours/totalMonthHours.ts';
 
 export const fetchTodosFx = createEffect<void, TodosType[], Error>(async () => {
   await waitFn(2000, 3000);
@@ -24,14 +24,24 @@ export const $todos = createStore<TodosType[]>([]).on(
   (_, todos) => todos,
 );
 
-export const $groupTodosByCategories = createStore<TodosByCategoryType>(
-  initialTodosByCategories,
+export const $groupTodosByMonth = createStore<TodosByMonthType>(
+  initialTodosByMonth,
 ).on(fetchTodosFx.doneData, (_, todosByCategory) =>
-  groupTodosByCategories(todosByCategory),
+  groupTodosByMonth(todosByCategory),
 );
 
-export const $totalMonthlyHoursByCategories = $groupTodosByCategories.map(
-  (groupedEntries) => calculateTotalMonthlyHoursByCategories(groupedEntries),
+export const $totalMonthlyHoursByCategories = $groupTodosByMonth.map(
+  (groupedEntries) => monthlyCategoryHours(groupedEntries),
+);
+
+export const $dayHoursInMonth = $groupTodosByMonth.map((groupedEntries) => {
+  return calcDayHoursInMonth(groupedEntries);
+});
+
+export const $totalDaysHoursInMonth = $dayHoursInMonth.map(
+  (dayHoursInMonth) => {
+    return totalMonthHours(dayHoursInMonth);
+  },
 );
 
 export const $isLoading = fetchTodosFx.pending;

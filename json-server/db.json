@@ -1,12 +1,15 @@
 {
-  "timeLogEntries": [
+  "todos": [
     {
       "id": 1,
       "categoryName": "Development",
       "title": "Разработка модуля профиля пользователя",
       "description": "Создание API для получения и обновления данных профиля.",
       "hours": 3,
-      "date": "10.04.2025"
+      "date": "10.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 2,
@@ -14,7 +17,10 @@
       "title": "Верстка страницы профиля",
       "description": "Создание HTML/CSS для отображения информации пользователя.",
       "hours": 2,
-      "date": "10.04.2025"
+      "date": "10.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 3,
@@ -22,7 +28,10 @@
       "title": "Интеграция фронтенда и бэкенда профиля",
       "description": "Связывание UI с API для загрузки и сохранения данных.",
       "hours": 2,
-      "date": "10.04.2025"
+      "date": "10.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 4,
@@ -30,7 +39,10 @@
       "title": "Написание unit-тестов для API профиля",
       "description": "Покрытие кода тестами для эндпоинтов профиля.",
       "hours": 1,
-      "date": "10.04.2025"
+      "date": "10.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 5,
@@ -38,7 +50,10 @@
       "title": "Тестирование функционала регистрации",
       "description": "Проверка всех сценариев регистрации, включая обработку ошибок.",
       "hours": 4,
-      "date": "03.04.2025"
+      "date": "03.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 6,
@@ -46,7 +61,10 @@
       "title": "Еженедельное планирование (Апрель, нед.2)",
       "description": "Обсуждение задач на предстоящую неделю, распределение ресурсов.",
       "hours": 1,
-      "date": "07.04.2025"
+      "date": "07.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 7,
@@ -54,7 +72,10 @@
       "title": "Исправление багов в корзине",
       "description": "Устранение ошибок, связанных с добавлением и удалением товаров.",
       "hours": 3,
-      "date": "17.04.2025"
+      "date": "17.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 8,
@@ -62,7 +83,10 @@
       "title": "Регрессионное тестирование после хотфикса",
       "description": "Проверка основного функционала после внесения срочных исправлений.",
       "hours": 2,
-      "date": "21.04.2025"
+      "date": "21.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 9,
@@ -70,7 +94,10 @@
       "title": "Подготовка к демо (Апрель)",
       "description": "Сбор материалов и настройка окружения для демонстрации прогресса.",
       "hours": 2,
-      "date": "28.04.2025"
+      "date": "28.04.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 10,
@@ -78,7 +105,10 @@
       "title": "Тестирование нового модуля отчетов - UI",
       "description": "Проверка корректности отображения данных и элементов управления.",
       "hours": 2,
-      "date": "15.05.2025"
+      "date": "15.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 11,
@@ -86,7 +116,10 @@
       "title": "Тестирование нового модуля отчетов - API",
       "description": "Проверка эндпоинтов генерации отчетов, фильтрации и выгрузки.",
       "hours": 3,
-      "date": "15.05.2025"
+      "date": "15.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 12,
@@ -94,7 +127,10 @@
       "title": "Нагрузочное тестирование модуля отчетов",
       "description": "Проверка производительности при генерации больших отчетов.",
       "hours": 2,
-      "date": "15.05.2025"
+      "date": "15.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 13,
@@ -102,7 +138,10 @@
       "title": "Написание тест-кейсов для отчетов",
       "description": "Документирование сценариев тестирования модуля отчетов.",
       "hours": 1,
-      "date": "15.05.2025"
+      "date": "15.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 14,
@@ -110,7 +149,10 @@
       "title": "Реализация экспорта отчетов в CSV",
       "description": "Добавление функционала выгрузки сгенерированных отчетов в CSV формат.",
       "hours": 4,
-      "date": "01.05.2025"
+      "date": "01.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 15,
@@ -118,7 +160,10 @@
       "title": "Ретроспектива спринта (Май)",
       "description": "Обсуждение итогов прошедшего спринта, выявление проблем и успехов.",
       "hours": 2,
-      "date": "05.05.2025"
+      "date": "05.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 16,
@@ -126,7 +171,10 @@
       "title": "Оптимизация запросов к БД",
       "description": "Анализ и улучшение производительности медленных SQL-запросов.",
       "hours": 3,
-      "date": "12.05.2025"
+      "date": "12.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 17,
@@ -134,7 +182,10 @@
       "title": "Настройка CI/CD для нового сервиса",
       "description": "Автоматизация сборки, тестирования и развертывания микросервиса отчетов.",
       "hours": 5,
-      "date": "19.05.2025"
+      "date": "19.05.2025",
+      "isCompleted": false,
+      "isActive": false,
+      "startedAtTimestamp": null
     },
     {
       "id": 18,
@@ -142,57 +193,10 @@
       "title": "Груминг бэклога на следующий спринт",
       "description": "Декомпозиция и оценка задач для следующего этапа разработки.",
       "hours": 2,
-      "date": "22.05.2025"
-    }
-  ],
-  "tasks": [
-    {
-      "id": 1,
-      "name": "Проанализировать требования к новой фиче",
+      "date": "22.05.2025",
       "isCompleted": false,
       "isActive": false,
-      "startedAtTimestamp": null,
-      "totalTrackedTimeSeconds": 0
-    },
-    {
-      "id": 2,
-      "name": "Написать ТЗ на модуль аналитики",
-      "isCompleted": false,
-      "isActive": false,
-      "startedAtTimestamp": null,
-      "totalTrackedTimeSeconds": 0
-    },
-    {
-      "id": 3,
-      "name": "Разработать дизайн-макеты",
-      "isCompleted": true,
-      "isActive": false,
-      "startedAtTimestamp": null,
-      "totalTrackedTimeSeconds": 1800
-    },
-    {
-      "id": 4,
-      "name": "Провести А/Б тестирование главной страницы",
-      "isCompleted": false,
-      "isActive": false,
-      "startedAtTimestamp": null,
-      "totalTrackedTimeSeconds": 0
-    },
-    {
-      "id": 5,
-      "name": "Обновить документацию API",
-      "isCompleted": true,
-      "isActive": false,
-      "startedAtTimestamp": null,
-      "totalTrackedTimeSeconds": 3600
-    },
-    {
-      "id": 6,
-      "name": "Подготовить презентацию для инвесторов",
-      "isCompleted": false,
-      "isActive": false,
-      "startedAtTimestamp": null,
-      "totalTrackedTimeSeconds": 0
+      "startedAtTimestamp": null
     }
   ]
 }
