@@ -9,6 +9,9 @@ export type TodosType = {
   description: string;
   hours: number;
   date: string;
+  isActive: boolean;
+  isCompleted: boolean;
+  startedAtTimestamp: string | null;
 };
 
 export type TodosByCategoryType = Record<CategoryType, TodosType[]>;

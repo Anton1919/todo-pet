@@ -13,12 +13,14 @@ type PropsType = {
   monthDays: HeaderDays[];
   groupTodosByMonth: DailyTasksCellType;
   monthlyCategoryHours: TotalHoursByCategoriesType;
+  selectedMonth: string;
 };
 
 export const TableTasks = memo(function TableTasks({
   monthDays = [],
   groupTodosByMonth,
   monthlyCategoryHours,
+  selectedMonth,
 }: PropsType) {
   const tableTitleStyles = (isBold: boolean = true) => {
     return clsx(s['table__title'], {
@@ -47,7 +49,6 @@ export const TableTasks = memo(function TableTasks({
             <div className={tableTitleStyles(false)}>{task.title}</div>
             <div className={tableDaysStyles(false)}>
               {monthDays.map(({ dayNum }) => {
-                const selectedMonth = 'May';
                 return (
                   <DailyTasksCell
                     key={dayNum}

@@ -150,7 +150,7 @@
       "description": "Добавление функционала выгрузки сгенерированных отчетов в CSV формат.",
       "hours": 4,
       "date": "01.05.2025",
-      "isCompleted": false,
+      "isCompleted": true,
       "isActive": false,
       "startedAtTimestamp": null
     },

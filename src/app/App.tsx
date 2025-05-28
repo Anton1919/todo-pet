@@ -16,6 +16,8 @@ import {
 import { useUnit } from 'effector-react';
 import { TableTasks } from '@/features/TableTasks';
 
+const month = 'May';
+
 export const App = function App() {
   const { currentDate, monthDays } = useDateInfo();
   const dailyTasksCell = useUnit($dailyTasksCell);
@@ -39,15 +41,16 @@ export const App = function App() {
         tasksSlot={
           <TableTasks
             monthDays={monthDays}
+            selectedMonth={month}
             groupTodosByMonth={dailyTasksCell}
-            monthlyCategoryHours={totalMonthlyHoursByCategories['May']}
+            monthlyCategoryHours={totalMonthlyHoursByCategories[month]}
           />
         }
         footerSlot={
           <TableFooter
             monthDays={monthDays}
-            dayHours={dayHours['May']}
-            totalHoursInMonth={totalHoursInMonth['May']}
+            dayHours={dayHours[month]}
+            totalHoursInMonth={totalHoursInMonth[month]}
           />
         }
       />
