@@ -43,7 +43,7 @@ export const TableFooter = memo(function TableFooter({
         {monthDays.map(({ dayNum }) => (
           <div className={s['table__day-cell']} key={dayNum}>
             <span className={s['table__day-cell-num']}>
-              {dayHours[dayNum].totalHours}
+              {dayHours[dayNum]?.totalHours}
             </span>
           </div>
         ))}

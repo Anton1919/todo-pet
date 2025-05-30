@@ -1,20 +1,9 @@
-import {
-  getMonthDays,
-  type HeaderDays,
-} from '@/shared/lib/utils/getMonthDays.ts';
+import { getMonthDays } from '@/shared/lib/utils/getMonthDays.ts';
+import type { DateInfoType } from '@/shared/lib/hooks/useDateInfo.ts';
 import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 
-export type DateInfoType = {
-  now: Date;
-  currentYear: number;
-  currentMonth: number;
-  currentDate?: number;
-  monthDays: HeaderDays[];
-  currentMonthName: string;
-};
-
-export function useDateInfo(): DateInfoType {
+export function getDateInfo(): DateInfoType {
   const now = new Date();
   const currentYear = now.getFullYear();
   const currentMonth = now.getMonth();

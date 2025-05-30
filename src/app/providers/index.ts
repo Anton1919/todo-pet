@@ -1,3 +1,3 @@
-import ThemeProvider from './ui/ThemeProvider';
+import AppThemeProvider from './ui/AppThemeProvider';
 
-export default ThemeProvider;
+export default AppThemeProvider;

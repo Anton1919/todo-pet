@@ -1,10 +1,10 @@
 import { createRoot } from 'react-dom/client';
-import ThemeProvider from '@/app/providers';
-import '@/app/styles/index.scss';
+import AppThemeProvider from '@/app/providers';
 import { App } from './app/App.tsx';
+import '@/app/styles/index.scss';
 
 createRoot(document.getElementById('root')!).render(
-  <ThemeProvider>
+  <AppThemeProvider>
     <App />
-  </ThemeProvider>,
+  </AppThemeProvider>,
 );

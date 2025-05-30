@@ -1,9 +1,8 @@
 import { useTheme } from '@/shared/lib/hooks/useTheme.ts';
-import { memo } from 'react';
 import { Button } from '@mui/material';
 
-export const ThemeSwitcher = memo(function ThemeSwitcher() {
-  const { theme, toggleTheme } = useTheme();
+export const ThemeSwitcher = function ThemeSwitcher() {
+  const { toggleTheme } = useTheme();
 
   return (
     <>
@@ -13,8 +12,8 @@ export const ThemeSwitcher = memo(function ThemeSwitcher() {
         color={'primary'}
         onClick={toggleTheme}
       >
-        ThemeSwitcher
+        Theme switcher
       </Button>
     </>
   );
-});
+};

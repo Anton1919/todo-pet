@@ -1,37 +1,18 @@
-import { useContext, useEffect } from 'react';
-import {
-  Theme,
-  ThemeContext,
-  type ThemeType,
-} from '@/shared/lib/context/ThemeContext.ts';
-import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage.ts';
+import { useContext } from 'react';
+import { Theme, ThemeContext } from '@/shared/lib/context/ThemeContext.ts';
 
 export function useTheme() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const context = useContext(ThemeContext);
 
-  useEffect(() => {
-    document.documentElement.classList.add(theme!);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
 
-    return () => {
-      document.documentElement.classList.remove(theme!);
-    };
-  }, [theme]);
+  const { theme, setTheme } = context;
 
   const toggleTheme = () => {
-    let newTheme: ThemeType;
-    switch (theme) {
-      case Theme.LIGHT:
-        newTheme = Theme.DARK;
-        break;
-      case Theme.DARK:
-        newTheme = Theme.LIGHT;
-        break;
-      default:
-        newTheme = Theme.LIGHT;
-    }
-
+    const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
     setTheme?.(newTheme);
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
   return {
