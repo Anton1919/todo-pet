@@ -30,6 +30,7 @@ import {
 import { SelectDate } from '@/features/SelectDate';
 import { AddTodoForm } from '@/features/AddTodoForm';
 import { TodoModal } from '@/features/TodoModal';
+import { CreateModalForm } from '@/features/CreateModalForm/CreateModalForm.tsx';
 
 export const App = function App() {
   const { currentDate, monthDays } = useDateInfo();
@@ -60,12 +61,9 @@ export const App = function App() {
       <TodoModal
         isOpen={isOpenModal}
         handleClose={() => setOpenModal(false)}
-        handleAdd={() => setOpenModal(false)}
+        handleSave={() => setOpenModal(false)}
         title={'Create task'}
-        formContent={
-          'Duis mollis, est non commodo luctus, nisi erat porttitor ligula.\n' +
-          '              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.'
-        }
+        formContent={<CreateModalForm />}
       />
       <TableMenu>
         <ThemeSwitcher />

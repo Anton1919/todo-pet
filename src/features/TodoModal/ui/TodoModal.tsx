@@ -8,7 +8,7 @@ type PropsType = {
   formContent: ReactNode;
   isOpen: boolean;
   handleClose: () => void;
-  handleAdd: () => void;
+  handleSave: () => void;
 };
 
 export const TodoModal = function TodoModal({
@@ -16,7 +16,7 @@ export const TodoModal = function TodoModal({
   handleClose,
   formContent,
   title,
-  handleAdd,
+  handleSave,
 }: PropsType) {
   return (
     <Modal
@@ -38,9 +38,7 @@ export const TodoModal = function TodoModal({
           </Button>
         </div>
 
-        <div className={s.form}>
-          <Typography>{formContent}</Typography>
-        </div>
+        <div className={s.form}>{formContent}</div>
 
         <div className={s.buttonsWrapper}>
           <Button
@@ -55,7 +53,7 @@ export const TodoModal = function TodoModal({
             size={'small'}
             variant={'contained'}
             color={'success'}
-            onClick={handleAdd}
+            onClick={handleSave}
           >
             Save
           </Button>
